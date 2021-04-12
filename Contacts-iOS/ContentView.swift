@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var contacts: [String] = ["Mamma", "Papà", "Simone", "Francesca", "Pietro", "Michelangelo", "Riccardo", "Stefano", "Giacomo"]
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(contacts, id: \.hash, rowContent: { contact in
+            Text(contact)
+        })
     }
 }
 
